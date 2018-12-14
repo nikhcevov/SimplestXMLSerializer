@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<person country="RUS">
+    <fullname>Sergey</fullname>
+    <age class="java.lang.Integer">32</age>
+    <info relevance="true">
+        <phone>1488</phone>
+        <married class="java.lang.Boolean">true</married>
+        <child class="java.lang.Integer">10</child>
+    </info>
+</person>

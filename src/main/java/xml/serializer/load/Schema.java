@@ -123,7 +123,7 @@ final class Schema {
       Field[] list = type.getDeclaredFields();
       
       for(int i = 0; i < list.length; i++) {                       
-         scan(list[i]);                      
+         scan(list[i]);
       }
    }
 

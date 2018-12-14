@@ -70,7 +70,7 @@ final class CollectionFactory extends Factory {
       if(!isInstantiable(field)) {
          field = getConversion(field);
       }
-      if(!isCollection(field)) {
+      if(isCollection(field)) {
          throw new InstantiationException("Type is not a collection " + field);
       }
       return (Collection)field.newInstance();
@@ -93,7 +93,7 @@ final class CollectionFactory extends Factory {
       if(!isInstantiable(type)) {
          throw new InstantiationException("Could not instantiate class " + type);
       }
-      if(!isCollection(type)) {
+      if(isCollection(type)) {
          throw new InstantiationException("Type is not a collection " + type);
       }
       return (Collection)type.newInstance();
@@ -110,7 +110,7 @@ final class CollectionFactory extends Factory {
     *
     * @return a collection that is assignable to the provided type
     */
-   public Class getConversion(Class type) throws Exception {
+   private Class getConversion(Class type) throws Exception {
       if(type.isAssignableFrom(ArrayList.class)) {
          return ArrayList.class;
       }
@@ -133,6 +133,6 @@ final class CollectionFactory extends Factory {
     * @return true if the provided type is a collection type
     */
    private boolean isCollection(Class type) {
-      return Collection.class.isAssignableFrom(type);           
+      return !Collection.class.isAssignableFrom(type);
    }
 }

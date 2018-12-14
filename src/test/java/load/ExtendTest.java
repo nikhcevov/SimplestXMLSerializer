@@ -7,6 +7,7 @@ import xml.serializer.Root;
 import xml.serializer.load.Persister;
 
 import java.io.StringReader;
+import java.lang.annotation.Retention;
 
 
 public class ExtendTest extends TestCase {
@@ -64,7 +65,7 @@ public class ExtendTest extends TestCase {
 	   serializer = new Persister();
 	}
 	
-   public void testFirst() throws Exception {    
+   public void testFirst() throws Exception {
       First first = (First) serializer.read(First.class, new StringReader(FIRST));
       
       assertEquals(first.id, 12);

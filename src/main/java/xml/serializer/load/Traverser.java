@@ -33,7 +33,6 @@ import xml.serializer.Root;
  * the <code>Root</code> annotation to ensure that the XML schema
  * matches the provided DOM element. If no root element is defined the
  * serialization and deserialization cannot be performed.
- *
  */
 final class Traverser {
 
@@ -111,7 +110,7 @@ final class Traverser {
       Root label = getRoot(type);
 
       if(label == null) {
-         throw new RootException("No root annotation defined for %s", type.getName());              
+         throw new RootException("No root annotation defined for %s", type.getName());
       }
       return write(source, label.name());
    }
